@@ -11,7 +11,7 @@ $(document).ready(function() {  //Starts the function
         var country = data.country;
         $("#init").html("You are in " + city + ", " + state + ", " + country + ".");  //Prints some location data as HTML
         
-        $.getJSON("http://api.wunderground.com/api/c64321db8a02c5bb/conditions/q/" + lat + "," + lon + ".json", function(input) {  Gets API for weather
+        $.getJSON("http://api.wunderground.com/api/c64321db8a02c5bb/conditions/q/" + lat + "," + lon + ".json", function(input) {  //Gets API for weather
            
             //Define variables for weather data
             var uv = input.current_observation.UV;
