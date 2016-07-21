@@ -1,3 +1,4 @@
+
 /* Loading Ubuntu font */
 @import 'https://fonts.googleapis.com/css?family=Ubuntu';
 
@@ -79,6 +80,21 @@ body {
      margin-top: 5px;
 }
 
+/*menu button*/
+#menuBtn {
+     width: 40px;
+     height: 45px;
+     background-color: transparent;
+     display: inline-block;
+     z-index: 100;
+
+     /* Aligns the div to the right */
+     position: absolute;
+     right: 35px;
+
+     top: 37px;
+}
+
 /*Stylizes the tab boxes*/
 .tabs {
     height: 95px;
@@ -104,4 +120,75 @@ body {
 
 #tabThree {
     width: 665px;
+}
+ /* Hamburger Arrow Maker */
+
+/* Forwards Animation */
+ @keyframes rotateUp {
+      to {transform : rotate(47deg)};
+ }
+
+ @keyframes rotateDown {
+     to {transform : rotate(-47deg)};
+ }
+
+/* Backwards Animation */
+@keyframes rotateReverseUp {
+     from {transform : rotate(47deg)};
+     to {transform : rotate(0deg)};
+}
+
+@keyframes rotateReverseDown {
+     from {transform : rotate(-47deg)};
+     to {transform : rotate(0deg)};
+}
+
+/* Classes to rotate the meat */
+
+.rotateUp {
+     animation-name: rotateUp;
+     animation-duration: 1s;
+     animation-fill-mode: forwards;
+}
+
+.rotateDown {
+     animation-name: rotateDown;
+     animation-duration: 1s;
+     animation-fill-mode: forwards;
+}
+
+.rotateReverseUp {
+     animation-name: rotateReverseUp;
+     animation-duration: 1s;
+     animation-fill-mode: forwards;
+}
+
+.rotateReverseDown {
+     animation-name: rotateReverseDown;
+     animation-duration: 1s;
+     animation-fill-mode: forwards;
+}
+
+/* Fade meat-imation*/
+
+@keyframes fadeout {
+     from { opacity : 1 ; }
+     to { opacity : 0 ; }
+}
+
+@keyframes fadein {
+     from { opacity : 0 };
+     to {opacity : 1 };
+}
+
+/* Classes to fade the meat */
+
+.fadeout {
+     animation: fadeout 1s;
+     animation-fill-mode: forwards;
+}
+
+.fadein {
+     animation: fadein 1s;
+     animation-fill-mode: forwards;
 }
