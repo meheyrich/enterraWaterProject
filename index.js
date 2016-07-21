@@ -1,23 +1,97 @@
-$(document).ready(function() {  //Starts the function
-    
-    $.getJSON("http://ip-api.com/json", function(data) {  //Gets API for location from IP API
-        
-        //These define variables for different location data
-        var state = data.region;
-        var isp = data.isp;
-        var lat = data.lat;
-        var lon = data.lon;
-        var city = data.city;
-        var country = data.country;
-        $("#init").html("You are in " + city + ", " + state + ", " + country + ".");  //Prints some location data as HTML
-        
-        $.getJSON("http://api.wunderground.com/api/c64321db8a02c5bb/conditions/q/" + lat + "," + lon + ".json", function(input) {  //Gets API for weather
-           
-            //Define variables for weather data
-            var uv = input.current_observation.UV;
-            
-        });
-        
-    });
-    
-});
+/* Loading Ubuntu font */
+@import 'https://fonts.googleapis.com/css?family=Ubuntu';
+
+body {
+     margin: 0;
+}
+
+/* Whole Navigation Bar thingy */
+#navBar {
+     width: 100%;
+     height: 120px;
+     background-color: #60112D;
+}
+
+/* Div Housing the logoPic */
+#logoDiv {
+     padding-top: 7px;
+     padding-left: 20px;
+     padding-right: 20px;
+     display: inline-block;
+}
+
+#logoPic {
+     height: 100px;
+     width: auto;
+}
+
+/* Div housing the productName */
+#productNameDiv {
+     display: inline-block;
+     height: 120px;
+     position: absolute;
+}
+
+#productName {
+     display: inline-block;
+     color: white;
+     text-align: center;
+
+     /*Centering Vertically*/
+     position: relative;
+     top: 50%;
+     transform: translateY(-50%);
+
+     /* Stylizing the font */
+     font-family: 'Ubuntu', sans-serif;
+     font-size: 45px;
+}
+
+/* Outlined border thing */
+#hamburgerWrapper {
+     width: 60px;
+     height: 60px;
+     border: 6px solid white;
+     border-radius: 20px;
+     display: inline-block;
+
+     /* Aligns the div to the right */
+     position: absolute;
+     right: 20px;
+
+     top: 23px;
+}
+
+/* Meat House */
+#meatWrapper {
+     padding-top: 8px;
+}
+
+/* The meat */
+.insideHamburger {
+     width: 40px;
+     height: 8px;
+     background-color: white;
+     border-radius: 5px;
+
+     /*Aligning within div*/
+     margin: auto;
+     margin-top: 5px;
+}
+
+/*
+.tab {
+     width: 100px;
+     height: 87px;
+     background-color: green;
+     display: inline-block;
+}
+
+#tabTwo {
+     margin-left: 5px;
+}
+
+#tabThree {
+     margin-left: 5px;
+}
+*/
