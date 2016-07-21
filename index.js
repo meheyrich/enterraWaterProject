@@ -1,97 +1,25 @@
-/* Loading Ubuntu font */
-@import 'https://fonts.googleapis.com/css?family=Ubuntu';
+$(document).ready(function() {
+     $("#hamburgerWrapper").click(function() {
+          //Tab variables
+          var tabNumber = 4;
+          var tabWidth = 200;
+          var tabFinal = tabNumber*tabWidth + "px";
+          var meatFinal = (tabNumber*tabWidth) - 60 + "px";
 
-body {
-     margin: 0;
-}
+          //Animates height of border
+          $(this).animate({height : "87px",
+                           top: "10px"});
+          //Centers the hamburger
+          $("#meatWrapper").animate({"padding-top":"21px"});
 
-/* Whole Navigation Bar thingy */
-#navBar {
-     width: 100%;
-     height: 120px;
-     background-color: #60112D;
-}
+          //Animates the width of the border
+          $(this).delay(250).animate({width: tabFinal}, 1000);
 
-/* Div Housing the logoPic */
-#logoDiv {
-     padding-top: 7px;
-     padding-left: 20px;
-     padding-right: 20px;
-     display: inline-block;
-}
+          //Makes the burger not move
+          $("#meatWrapper").delay(250).animate({"padding-left":meatFinal}, 1000);
 
-#logoPic {
-     height: 100px;
-     width: auto;
-}
-
-/* Div housing the productName */
-#productNameDiv {
-     display: inline-block;
-     height: 120px;
-     position: absolute;
-}
-
-#productName {
-     display: inline-block;
-     color: white;
-     text-align: center;
-
-     /*Centering Vertically*/
-     position: relative;
-     top: 50%;
-     transform: translateY(-50%);
-
-     /* Stylizing the font */
-     font-family: 'Ubuntu', sans-serif;
-     font-size: 45px;
-}
-
-/* Outlined border thing */
-#hamburgerWrapper {
-     width: 60px;
-     height: 60px;
-     border: 6px solid white;
-     border-radius: 20px;
-     display: inline-block;
-
-     /* Aligns the div to the right */
-     position: absolute;
-     right: 20px;
-
-     top: 23px;
-}
-
-/* Meat House */
-#meatWrapper {
-     padding-top: 8px;
-}
-
-/* The meat */
-.insideHamburger {
-     width: 40px;
-     height: 8px;
-     background-color: white;
-     border-radius: 5px;
-
-     /*Aligning within div*/
-     margin: auto;
-     margin-top: 5px;
-}
-
-/*
-.tab {
-     width: 100px;
-     height: 87px;
-     background-color: green;
-     display: inline-block;
-}
-
-#tabTwo {
-     margin-left: 5px;
-}
-
-#tabThree {
-     margin-left: 5px;
-}
-*/
+          $("#tabReference").append("<div class = 'tab' id = 'tabOne'></div>");
+          $("#tabReference").append("<div class = 'tab' id = 'tabTwo'></div>");
+          $("#tabReference").append("<div class = 'tab' id = 'tabThree'></div>");
+     })
+})
