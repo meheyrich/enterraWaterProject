@@ -79,19 +79,29 @@ body {
      margin-top: 5px;
 }
 
-/*
-.tab {
-     width: 100px;
-     height: 87px;
-     background-color: green;
-     display: inline-block;
+/*Stylizes the tab boxes*/
+.tabs {
+    height: 95px;
+    border-left: 6px solid white;
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+
+    top: 10px;
+}
+
+#tabZero {
+    width: 65px;
+}
+
+#tabOne {
+    width: 265px;
 }
 
 #tabTwo {
-     margin-left: 5px;
+    width: 465px;
 }
 
 #tabThree {
-     margin-left: 5px;
+    width: 665px;
 }
-*/
