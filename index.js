@@ -1,10 +1,15 @@
 $(document).ready(function() {
 
-     //Button Click function
+     //button click function
      $("#menuBtn").click(function() {
           // Tab variables
-          var tabNumber = 4;
-          var tabWidth = 200;
+          var tabNumber = 4
+          if ( $(window).width() > 1250 ) {
+               var tabWidth = 200;
+          }
+          else {
+               var tabWidth = 125;
+          }
 
           if ($("#hamburgerWrapper").width() == 60 && $("#hamburgerWrapper").height() == 60) {
 
@@ -28,11 +33,14 @@ $(document).ready(function() {
 
                //Makes burger turn into an "X"
                $("#middleMeat").addClass("fadeout").removeClass("fadein");
+               // $("#bunOne").addClass("moveLeft").removeClass("moveRight")
                $("#bunOne").addClass("rotateUp").removeClass("rotateReverseUp");
+               // $("#bunTwo").addClass("moveRight").removeClass("moveLeft")
                $("#bunTwo").addClass("rotateDown").removeClass("rotateReverseDown");
+
           }
 
-          else if( $("#hamburgerWrapper").width() == (tabNumber*tabWidth + 60) && $("#hamburgerWrapper").height() == 87 ) {
+          else if( $("#hamburgerWrapper").width() == (tabNumber*tabWidth + 60) && $("#hamburgerWrapper").height() == 87 || $("#hamburgerWrapper").height() == (tabNumber*tabWidth + 60) && $("#hamburgerWrapper").width() == 87) {
                //Close the hamburgerWrapper
                $("#hamburgerWrapper").removeClass("wrapperStretchOut").addClass("wrapperStretchOutReverse");
                $("#meatWrapper").removeClass("burgerHolderLeft").addClass("burgerHolderLeftReverse");
