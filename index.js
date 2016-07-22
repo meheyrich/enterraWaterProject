@@ -1,7 +1,11 @@
 $(document).ready(function() {
 
+     function changer() {
+          console.log($(window).width());
+     }
+     $(window).resize(changer);
      //Hides tab lines on load
-     $(".tabs").hide();
+     // $(".tabs").hide();
 
      var i = 0;
 
@@ -15,22 +19,21 @@ $(document).ready(function() {
           if (i === 0 && $("#hamburgerWrapper").width() == 60 && $("#hamburgerWrapper").height() == 60) {
 
           //Animates height of border
-          $("#hamburgerWrapper").animate({height : "87px",
-                           top: "10px"}, 250);
+          $("#hamburgerWrapper").removeClass("wrapperStretchUpReverse").addClass("wrapperStretchUp");
           //Centers the hamburger
-          $("#meatWrapper").animate({"padding-top":"21px"}, 250);
+          $("#meatWrapper").removeClass("burgerHolderUpReverse").addClass("burgerHolderUp");
 
           //Animates the width of the border
-          $("#hamburgerWrapper").delay(250).animate({width: tabFinal}, 1000);
-
+          // window.setTimeout(function(){$("#hamburgerWrapper").removeClass("wrapperStretchUp").addClass("wrapperStretchOut");}, 500);
+          window.setTimeout(function(){$("#hamburgerWrapper").removeClass("wrapperStretchUp").addClass("wrapperStretchOut");}, 500);
           //Creates tab lines during animation
-          $("#tabZero").delay(550).fadeIn(1);
-          $("#tabOne").delay(850).fadeIn(1);
-          $("#tabTwo").delay(1000).fadeIn(1);
-          $("#tabThree").delay(1200).fadeIn(1);
+          window.setTimeout(function(){$("#tabZero").addClass("showTab");}, 550);
+          window.setTimeout(function(){$("#tabOne").addClass("showTab");}, 700);
+          window.setTimeout(function(){$("#tabTwo").addClass("showTab");}, 850);
+          window.setTimeout(function(){$("#tabThree").addClass("showTab");}, 1050);
 
           //Makes the burger not move
-          $("#meatWrapper").delay(250).animate({"padding-left":meatFinal}, 1000);
+          window.setTimeout(function(){$("#meatWrapper").removeClass("burgerHolderUp").addClass("burgerHolderLeft");}, 500);
 
           //Makes burger turn into an "X"
           $("#middleMeat").addClass("fadeout").removeClass("fadein");
@@ -43,17 +46,16 @@ $(document).ready(function() {
 
           else if( $("#hamburgerWrapper").width() == (tabNumber*tabWidth + 60) && $("#hamburgerWrapper").height() == 87) {
                //Close the hamburgerWrapper
-               $("#hamburgerWrapper").animate({width: "60px"}, 1000);
-               $("#meatWrapper").animate({"padding-left":0}, 1000);
-               $("#hamburgerWrapper").delay(50).animate({height : "60px",
-                                top: "23px"}, 150);
-               $("#meatWrapper").delay(50).animate({"padding-top":"8px"}, 150);
+               $("#hamburgerWrapper").removeClass("wrapperStretchOut").addClass("wrapperStretchOutReverse");
+               $("#meatWrapper").removeClass("burgerHolderLeft").addClass("burgerHolderLeftReverse");
+               window.setTimeout(function(){$("#hamburgerWrapper").removeClass("wrapperStretchOutReverse").addClass("wrapperStretchUpReverse");}, 1250);
+               window.setTimeout(function(){$("#meatWrapper").removeClass("burgerHolderLeftReverse").addClass("burgerHolderUpReverse");}, 1250);
 
                //tabs disapear
-               $("#tabZero").delay(930).fadeOut(1);
-               $("#tabOne").delay(650).fadeOut(1);
-               $("#tabTwo").delay(500).fadeOut(1);
-               $("#tabThree").delay(300).fadeOut(1);
+               window.setTimeout(function(){$("#tabZero").removeClass("showTab");}, 900);
+               window.setTimeout(function(){$("#tabOne").removeClass("showTab");}, 450);
+               window.setTimeout(function(){$("#tabTwo").removeClass("showTab");}, 250);
+               window.setTimeout(function(){$("#tabThree").removeClass("showTab");}, 200);
 
                //re-hamburger-ize the menu
                $("#middleMeat").addClass("fadein").removeClass("fadeout");
