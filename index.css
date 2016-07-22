@@ -184,11 +184,11 @@ body {
 /* Classes to fade the meat */
 
 .fadeout {
-     animation: fadeout 1s;
+     animation: fadeout 0.5s;
      animation-fill-mode: forwards;
 }
 
 .fadein {
-     animation: fadein 1s;
+     animation: fadein 0.7s;
      animation-fill-mode: forwards;
 }
