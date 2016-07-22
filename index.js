@@ -1,9 +1,6 @@
 $(document).ready(function() {
 
-     //Hides tab lines on load
-
-     var i = 0;
-
+     //Button Click function
      $("#menuBtn").click(function() {
           // Tab variables
           var tabNumber = 4;
