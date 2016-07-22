@@ -98,12 +98,12 @@ body {
 /*Stylizes the tab boxes*/
 .tabs {
     height: 95px;
-    border-left: 6px solid white;
+    border-left: 6px solid transparent;
     display: inline-block;
     position: absolute;
     right: 20px;
-
     top: 10px;
+    opacity: 1;
 }
 
 #tabZero {
@@ -191,4 +191,130 @@ body {
 .fadein {
      animation: fadein 0.7s;
      animation-fill-mode: forwards;
+}
+
+/* Tab Animation */
+
+.showTab {
+     border-left: 6px solid white;
+}
+
+.hideTab {
+     border-left: 6px solid transparent;
+}
+
+/* Wrapper Open Animation */
+
+@keyframes wrapperStretchUp {
+     from { height : 60px ;
+            top : 23px ;
+            width : 60px ; }
+     to { height : 87px ;
+          top : 10px ;
+          width : 60px ; }
+}
+
+.wrapperStretchUp {
+     animation: wrapperStretchUp 0.25s;
+     animation-fill-mode: forwards;
+}
+
+@keyframes wrapperStretchOut {
+     from{ width : 60px ;
+           height : 87px ;
+           top : 10px ;}
+     to{ width : 860px ;
+         height : 87px ;
+         top : 10px ; }
+}
+
+.wrapperStretchOut {
+     animation: wrapperStretchOut 1s;
+     animation-fill-mode: forwards;
+}
+
+@keyframes wrapperStretchUpReverse {
+     from { height : 87px ;
+            top : 10px ;
+            width : 60px ; }
+     to { height : 60px ;
+          top : 23px ;
+          width : 60px ; }
+}
+
+.wrapperStretchUpReverse {
+     animation: wrapperStretchUpReverse 0.15s;
+     animation-fill-mode: forwards;
+}
+
+@keyframes wrapperStretchOutReverse {
+     from { width : 860px ;
+            height : 87px ;
+            top : 10px ; }
+     to { width : 60px ;
+          height : 87px ;
+          top : 10px ; }
+}
+
+.wrapperStretchOutReverse {
+     animation: wrapperStretchOutReverse 1s;
+     animation-fill-mode: forwards;
+}
+
+/* Burger keep in place */
+
+@keyframes burgerHolderUp {
+     from { padding-top : 8px ;
+            padding-left : 0px ; }
+     to { padding-top : 21px ;
+          padding-left : 0px ; }
+}
+
+.burgerHolderUp {
+     animation: burgerHolderUp 0.25s;
+     animation-fill-mode: forwards;
+}
+
+@keyframes burgerHolderLeft {
+     from { padding-left : 0px ;
+            padding-top: 21px ; }
+     to { padding-left : 800px ;
+          padding-top : 21px ; }
+}
+
+.burgerHolderLeft {
+     animation: burgerHolderLeft 1s;
+     animation-fill-mode: forwards;
+}
+
+@keyframes burgerHolderUpReverse {
+     from{ padding-top : 21px ;
+           padding-left : 0px ; }
+     to { padding-top : 8px ;
+          padding-left : 0px ; }
+}
+
+.burgerHolderUpReverse {
+     animation: burgerHolderUpReverse 0.15s;
+     animation-fill-mode: forwards;
+}
+
+@keyframes burgerHolderLeftReverse {
+     from{ padding-top : 21px ;
+           padding-left : 800px ; }
+     to { padding-top : 21px ;
+          padding-left : 0px ; }
+}
+
+.burgerHolderLeftReverse {
+     animation: burgerHolderLeftReverse 1s;
+     animation-fill-mode: forwards;
+}
+
+/* Begin the super-ultra-fun Media Query Stuff!! */
+
+@media screen and (max-width: 1250px) {
+   #hamburgerWrapper {
+       width:
+   }
 }
