@@ -12,7 +12,7 @@ $(document).ready(function() {
           var tabFinal = tabNumber*tabWidth + 60 + "px";
           var meatFinal = (tabNumber*tabWidth) + "px";
 
-          if (i === 0) {
+          if (i === 0 && $("#hamburgerWrapper").width() == 60 && $("#hamburgerWrapper").height() == 60) {
 
           //Animates height of border
           $("#hamburgerWrapper").animate({height : "87px",
@@ -39,16 +39,15 @@ $(document).ready(function() {
 
 
           i++;
+     }
 
-          }
-
-          else {
+          else if( $("#hamburgerWrapper").width() == (tabNumber*tabWidth + 60) && $("#hamburgerWrapper").height() == 87) {
                //Close the hamburgerWrapper
                $("#hamburgerWrapper").animate({width: "60px"}, 1000);
                $("#meatWrapper").animate({"padding-left":0}, 1000);
-               $("#hamburgerWrapper").delay(250).animate({height : "60px",
-                                top: "23px"}, 250);
-               $("#meatWrapper").delay(250).animate({"padding-top":"8px"}, 250);
+               $("#hamburgerWrapper").delay(50).animate({height : "60px",
+                                top: "23px"}, 150);
+               $("#meatWrapper").delay(50).animate({"padding-top":"8px"}, 150);
 
                //tabs disapear
                $("#tabZero").delay(930).fadeOut(1);
@@ -63,5 +62,5 @@ $(document).ready(function() {
 
                i--;
           }
-     })
-})
+     });
+});
