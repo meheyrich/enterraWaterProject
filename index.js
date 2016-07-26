@@ -1,5 +1,15 @@
 $(document).ready(function() {
 
+     //Make links unclickable
+     $("#home").addClass("unclickable");
+     $("#about").addClass("unclickable");
+     $("#contact").addClass("unclickable");
+     $("#account").addClass("unclickable");
+     $("#homeSymbol").addClass("unclickable");
+     $("#dropSymbol").addClass("unclickable");
+     $("#contactSymbol").addClass("unclickable");
+     $("#accountSymbol").addClass("unclickable");
+     
      //button click function
      $("#menuBtn").click(function() {
           // Tab variables
@@ -33,11 +43,28 @@ $(document).ready(function() {
 
                //Makes burger turn into an "X"
                $("#middleMeat").addClass("fadeout").removeClass("fadein");
-               // $("#bunOne").addClass("moveLeft").removeClass("moveRight")
                $("#bunOne").addClass("rotateUp").removeClass("rotateReverseUp");
-               // $("#bunTwo").addClass("moveRight").removeClass("moveLeft")
                $("#bunTwo").addClass("rotateDown").removeClass("rotateReverseDown");
-
+               
+               //Animates Text
+               window.setTimeout(function(){$(".textHome").addClass("slide");
+                                            $("#home").removeClass("unclickable");}, 950);
+               window.setTimeout(function(){$(".textAbout").addClass("slide");
+                                            $("#about").removeClass("unclickable");}, 750);
+               window.setTimeout(function(){$(".textContact").addClass("slide");
+                                            $("#contact").removeClass("unclickable");}, 650);
+               window.setTimeout(function(){$(".textAccount").addClass("slide");
+                                            $("#account").removeClass("unclickable");}, 500);
+              
+               //Animates Symbols for Mobile
+               window.setTimeout(function(){$(".houseImg").addClass("slideSymbol");
+                                            $("#homeSymbol").removeClass("unclickable");}, 500);
+               window.setTimeout(function(){$(".dropImg").addClass("slideSymbol");
+                                            $("#dropSymbol").removeClass("unclickable");}, 650);
+               window.setTimeout(function(){$(".contactImg").addClass("slideSymbol");
+                                            $("#contactSymbol").removeClass("unclickable");}, 750);
+               window.setTimeout(function(){$(".accountImg").addClass("slideSymbol");
+                                            $("#accountSymbol").removeClass("unclickable");}, 975);
           }
 
           else if( $("#hamburgerWrapper").width() == (tabNumber*tabWidth + 60) && $("#hamburgerWrapper").height() == 87 || $("#hamburgerWrapper").height() == (tabNumber*tabWidth + 60) && $("#hamburgerWrapper").width() == 87) {
@@ -48,7 +75,7 @@ $(document).ready(function() {
                window.setTimeout(function(){$("#meatWrapper").removeClass("burgerHolderLeftReverse").addClass("burgerHolderUpReverse");}, 1250);
 
                //tabs disapear
-               window.setTimeout(function(){$("#tabZero").removeClass("showTab");}, 900);
+               window.setTimeout(function(){$("#tabZero").removeClass("showTab");}, 855);
                window.setTimeout(function(){$("#tabOne").removeClass("showTab");}, 450);
                window.setTimeout(function(){$("#tabTwo").removeClass("showTab");}, 250);
                window.setTimeout(function(){$("#tabThree").removeClass("showTab");}, 200);
@@ -57,7 +84,26 @@ $(document).ready(function() {
                $("#middleMeat").addClass("fadein").removeClass("fadeout");
                $("#bunOne").addClass("rotateReverseUp").removeClass("rotateUp");
                $("#bunTwo").addClass("rotateReverseDown").removeClass("rotateDown");
-
+              
+               //Animates Text
+               window.setTimeout(function(){$(".textHome").removeClass("slide");
+                                            $("#home").addClass("unclickable");}, 0);
+               window.setTimeout(function(){$(".textAbout").removeClass("slide");
+                                            $("#about").addClass("unclickable");}, 100);
+               window.setTimeout(function(){$(".textContact").removeClass("slide");
+                                            $("#contact").addClass("unclickable");}, 225);
+               window.setTimeout(function(){$(".textAccount").removeClass("slide");
+                                            $("#account").addClass("unclickable");}, 400);
+              
+               //Animates Symbols for Mobile
+               window.setTimeout(function(){$(".houseImg").removeClass("slideSymbol");
+                                            $("#homeSymbol").addClass("unclickable");}, 500);
+               window.setTimeout(function(){$(".dropImg").removeClass("slideSymbol");
+                                            $("#dropSymbol").addClass("unclickable");}, 300);
+               window.setTimeout(function(){$(".contactImg").removeClass("slideSymbol");
+                                            $("#contactSymbol").addClass("unclickable");}, 100);
+               window.setTimeout(function(){$(".accountImg").removeClass("slideSymbol");
+                                            $("#accountSymbol").addClass("unclickable");}, 0);
           }
      });
 });
