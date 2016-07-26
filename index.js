@@ -9,7 +9,7 @@ $(document).ready(function() {
      $("#dropSymbol").addClass("unclickable");
      $("#contactSymbol").addClass("unclickable");
      $("#accountSymbol").addClass("unclickable");
-     
+
      //button click function
      $("#menuBtn").click(function() {
           // Tab variables
@@ -45,7 +45,7 @@ $(document).ready(function() {
                $("#middleMeat").addClass("fadeout").removeClass("fadein");
                $("#bunOne").addClass("rotateUp").removeClass("rotateReverseUp");
                $("#bunTwo").addClass("rotateDown").removeClass("rotateReverseDown");
-               
+
                //Animates Text
                window.setTimeout(function(){$(".textHome").addClass("slide");
                                             $("#home").removeClass("unclickable");}, 950);
@@ -55,7 +55,7 @@ $(document).ready(function() {
                                             $("#contact").removeClass("unclickable");}, 650);
                window.setTimeout(function(){$(".textAccount").addClass("slide");
                                             $("#account").removeClass("unclickable");}, 500);
-              
+
                //Animates Symbols for Mobile
                window.setTimeout(function(){$(".houseImg").addClass("slideSymbol");
                                             $("#homeSymbol").removeClass("unclickable");}, 500);
@@ -84,7 +84,7 @@ $(document).ready(function() {
                $("#middleMeat").addClass("fadein").removeClass("fadeout");
                $("#bunOne").addClass("rotateReverseUp").removeClass("rotateUp");
                $("#bunTwo").addClass("rotateReverseDown").removeClass("rotateDown");
-              
+
                //Animates Text
                window.setTimeout(function(){$(".textHome").removeClass("slide");
                                             $("#home").addClass("unclickable");}, 0);
@@ -94,7 +94,7 @@ $(document).ready(function() {
                                             $("#contact").addClass("unclickable");}, 225);
                window.setTimeout(function(){$(".textAccount").removeClass("slide");
                                             $("#account").addClass("unclickable");}, 400);
-              
+
                //Animates Symbols for Mobile
                window.setTimeout(function(){$(".houseImg").removeClass("slideSymbol");
                                             $("#homeSymbol").addClass("unclickable");}, 500);
@@ -106,4 +106,12 @@ $(document).ready(function() {
                                             $("#accountSymbol").addClass("unclickable");}, 0);
           }
      });
+
+     //JSON requests to access data
+     $.getJSON("index.json", function(data) {
+          console.log(data);
+          console.log($("#raindropWrapper").height())
+          $('#raindropFill').css("height",(data.volumes.rain/14.5) * 100 + "%");
+          $('#percentRainFill').html(Math.floor((data.volumes.rain/14.5) * 100) + "%")
+     })
 });
