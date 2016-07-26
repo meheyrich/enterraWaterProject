@@ -4,8 +4,7 @@
 
 body {
      margin: 0;
-     background-color: rgba(100, 0,0, 0.4)
-
+     background-color: rgba(100, 0, 0, 0.4);
 }
 
 /*Makes links the color of their parent*/
@@ -474,7 +473,7 @@ a {
      #tabThree {
         width : 440px;
      }
-    
+
 /*    Repositions the text*/
     .tabText {
         height: 100px;
@@ -487,7 +486,7 @@ a {
         position: absolute;
         color: white;
     }
-    
+
     #home {
         overflow: hidden;
         position: relative;
@@ -706,12 +705,12 @@ a {
           animation-duration: 1s;
           animation-fill-mode: forwards;
      }
-    
+
 /*    Makes the text invisible*/
     .tabText {
         visibility: hidden;
     }
-    
+
     #home {
         visibility: hidden;
     }
@@ -727,7 +726,7 @@ a {
     #account {
         visibility: hidden;
     }
-    
+
 /*    Stylizes all the symbols for mobile*/
     .tabSymbols {
         background-color: blueviolet;
@@ -737,13 +736,13 @@ a {
         display: inline-block;
         position: absolute;
     }
-    
+
     #homeSymbol {
         overflow: hidden;
         position: absolute;
         display: inline-block;
     }
-    
+
     #dropSymbol {
         overflow: hidden;
         position: absolute;
@@ -751,7 +750,7 @@ a {
         top: 120px;
         left: 10px;
     }
-    
+
     #contactSymbol {
         overflow: hidden;
         position: absolute;
@@ -759,7 +758,7 @@ a {
         top: 265px;
         left: 0px;
     }
-    
+
     #accountSymbol {
         overflow: hidden;
         position: absolute;
@@ -767,7 +766,7 @@ a {
         top: 370px;
         left: 5px;
     }
-    
+
     .houseImg {
         transition: 0.2s;
         position: relative;
@@ -775,7 +774,7 @@ a {
         height: auto;
         top: -60px;
     }
-    
+
     .dropImg {
         transition: 0.2s;
         position: relative;
@@ -783,7 +782,7 @@ a {
         height: auto;
         top: -65px;
     }
-    
+
     .contactImg {
         transition: 0.2s;
         position: relative;
@@ -791,7 +790,7 @@ a {
         height: auto;
         top: -45px;
     }
-    
+
     .accountImg {
         transition: 0.2s;
         position: relative;
@@ -799,10 +798,48 @@ a {
         height: auto;
         top: -75px;
     }
-    
+
 /*    Makes the symbol slide animation*/
     .slideSymbol {
         transition: 0.4s;
         top: 0px;
     }
+}
+
+/* Content of the page */
+
+#raindropWrapper {
+     overflow: hidden;
+     position: absolute;
+     width: 200px;
+     height: 374px;
+     top: 500px;
+     isolation: isolate;
+}
+
+#percentRainFill {
+     position: absolute;
+     width: inherit;
+     top: 45%;
+     text-align: center;
+     vertical-align: middle;
+     mix-blend-mode: screen;
+     color: cyan;
+     /*background-color: transparent;*/
+     font-size: 50px;
+}
+
+#raindrop {
+     width: inherit;
+     height: auto;
+     z-index: 100;
+}
+
+#raindropFill {
+     width: inherit;
+     position: absolute;
+     bottom: 5px;
+     height: 100px;
+     background-color: cyan;
+     z-index: -100;
 }
