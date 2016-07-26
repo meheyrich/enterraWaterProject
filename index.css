@@ -8,6 +8,16 @@ body {
 
 }
 
+/*Makes links the color of their parent*/
+a {
+    color: inherit;
+}
+
+/*This makes things unclickable*/
+.unclickable {
+    pointer-events: none;
+}
+
 /* Whole Navigation Bar thingy */
 #navBar {
      width: 100%;
@@ -124,6 +134,79 @@ body {
 #tabThree {
     width: 665px;
 }
+
+/*Stylizes the text in the Tabs*/
+.tabText {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 23px;
+    text-align: center;
+    right: 105px;
+    display: inline-block;
+    position: absolute;
+    color: white;
+}
+
+#home {
+    overflow: hidden;
+    position: relative;
+    right: 115px;
+    display: inline-block;
+}
+
+#about {
+    overflow: hidden;
+    position: relative;
+    right: 65px;
+    display: inline-block;
+}
+
+#contact {
+    overflow: hidden;
+    position: relative;
+    right: 30px;
+    font-size: 18px;
+    display: inline-block;
+    top: -12px;
+}
+
+#account {
+    overflow: hidden;
+    position: relative;
+    font-size: 18px;
+    display: inline-block;
+    top: -12px;
+}
+
+.textHome {
+    transition: 0.3s;
+    position: relative;
+    left: 140px;
+}
+
+.textAbout {
+    transition: 0.3s;
+    position: relative;
+    left: 162px;
+}
+
+.textContact {
+    transition: 0.3s;
+    position: relative;
+    left: 168px;
+}
+
+.textAccount {
+    transition: 0.3s;
+    position: relative;
+    left: 175px;
+}
+
+/*Animates the text sliding*/
+.slide {
+    transition: 0.4s;
+    left: 0px;
+}
+
  /* Hamburger Arrow Maker */
 
 /* Forwards Animation */
@@ -310,19 +393,12 @@ body {
      animation-fill-mode: forwards;
 }
 
-@keyframes moveLeft {
-
-}
-@keyframes moveRight {
-
-}
-.moveLeft {
-    animation: moveLeft 1s;
-    animation-fill-mode: forwards;
-}
-.moveRight {
-    animation: moveRight 1s;
-    animation-fill-mode: forwards;
+/*Makes the symbols for mobile invisible*/
+.tabSymbols {
+    visibility: hidden;
+    display: inline-block;
+    position: absolute;
+    right: 30px;
 }
 
 
@@ -389,15 +465,59 @@ body {
 
      #tabOne {
         width : 190px;
-   }
+     }
 
      #tabTwo {
         width : 315px;
-   }
+     }
 
      #tabThree {
         width : 440px;
-   }
+     }
+    
+/*    Repositions the text*/
+    .tabText {
+        height: 100px;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 16px;
+        text-align: center;
+        right: 105px;
+        top: 20px;
+        display: inline-block;
+        position: absolute;
+        color: white;
+    }
+    
+    #home {
+        overflow: hidden;
+        position: relative;
+        right: 75px;
+        display: inline-block;
+    }
+
+    #about {
+        overflow: hidden;
+        position: relative;
+        right: 53px;
+        display: inline-block;
+    }
+
+    #contact {
+        overflow: hidden;
+        position: relative;
+        right: 30px;
+        font-size: 10px;
+        display: inline-block;
+        top: -12px;
+    }
+
+    #account {
+        overflow: hidden;
+        position: relative;
+        font-size: 10px;
+        display: inline-block;
+        top: -12px;
+    }
 }
 
 @media screen and (max-width: 850px) {
@@ -541,21 +661,9 @@ body {
                margin-top : 19px ; }
       }
 
-      @keyframes moveLeft {
-           to {ms-transform: translate(-10px, 0px) ; /* IE 9 */
-               -webkit-transform: translate(-10px, 0px) ; /* Safari */
-               transform: translate(-10px, 0px) ; }
-      }
-
       @keyframes rotateDown {
           to {transform : rotate(43deg) ;
               margin-top : -22px ; }
-      }
-
-      @keyframes moveRight {
-          to { ms-transform: translate(10px, 0px) ; /* IE 9 */
-              -webkit-transform: translate(10px, 0px) ; /* Safari */
-              transform: translate(10px, 0px) ; }
       }
 
      /* Backwards Animation */
@@ -581,19 +689,9 @@ body {
           animation-fill-mode: forwards;
      }
 
-     .moveLeft {
-          animation: moveLeft 1s;
-          animation-fill-mode: forwards;
-     }
-
      .rotateDown {
           animation-name: rotateDown;
           animation-duration: 1s;
-          animation-fill-mode: forwards;
-     }
-
-     .moveRight {
-          animation: moveRight 1s;
           animation-fill-mode: forwards;
      }
 
@@ -608,4 +706,103 @@ body {
           animation-duration: 1s;
           animation-fill-mode: forwards;
      }
+    
+/*    Makes the text invisible*/
+    .tabText {
+        visibility: hidden;
+    }
+    
+    #home {
+        visibility: hidden;
+    }
+
+    #about {
+        visibility: hidden;
+    }
+
+    #contact {
+        visibility: hidden;
+    }
+
+    #account {
+        visibility: hidden;
+    }
+    
+/*    Stylizes all the symbols for mobile*/
+    .tabSymbols {
+        background-color: blueviolet;
+        visibility: visible;
+        top: 120px;
+        right: 99px;
+        display: inline-block;
+        position: absolute;
+    }
+    
+    #homeSymbol {
+        overflow: hidden;
+        position: absolute;
+        display: inline-block;
+    }
+    
+    #dropSymbol {
+        overflow: hidden;
+        position: absolute;
+        display: inline-block;
+        top: 120px;
+        left: 10px;
+    }
+    
+    #contactSymbol {
+        overflow: hidden;
+        position: absolute;
+        display: inline-block;
+        top: 265px;
+        left: 0px;
+    }
+    
+    #accountSymbol {
+        overflow: hidden;
+        position: absolute;
+        display: inline-block;
+        top: 370px;
+        left: 5px;
+    }
+    
+    .houseImg {
+        transition: 0.2s;
+        position: relative;
+        width: 60px;
+        height: auto;
+        top: -60px;
+    }
+    
+    .dropImg {
+        transition: 0.2s;
+        position: relative;
+        width: 35px;
+        height: auto;
+        top: -65px;
+    }
+    
+    .contactImg {
+        transition: 0.2s;
+        position: relative;
+        width: 60px;
+        height: auto;
+        top: -45px;
+    }
+    
+    .accountImg {
+        transition: 0.2s;
+        position: relative;
+        width: 50px;
+        height: auto;
+        top: -75px;
+    }
+    
+/*    Makes the symbol slide animation*/
+    .slideSymbol {
+        transition: 0.4s;
+        top: 0px;
+    }
 }
