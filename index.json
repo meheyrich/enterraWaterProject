@@ -1,0 +1,32 @@
+{
+    "weather":{
+        "time":{
+            "year":2016,
+            "month":"July",
+            "date":25,
+            "hour":14,
+            "minute":58,
+            "second":36
+        },
+        "rainfall":false,
+        "humidity":80,
+        "windspeed":4.3,
+        "temperature":33.1
+    },
+    "volumes":{
+        "grey":7,
+        "filterBottom":20,
+        "rain":5.5,
+        "potable":12
+    },
+    "presences":{
+        "garden":true,
+        "filterTop":false
+    },
+    "solenoids":{
+        "filterBottom":true,
+        "filterTop":true,
+        "garden":true
+    },
+    "ratio":1
+}
