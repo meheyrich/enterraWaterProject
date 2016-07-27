@@ -1,0 +1,844 @@
+
+/* Loading Ubuntu font */
+@import 'https://fonts.googleapis.com/css?family=Ubuntu';
+
+body {
+     margin: 0;
+     background-color: rgba(100, 0, 0, 0.4);
+}
+
+/*Makes links the color of their parent*/
+a {
+    color: inherit;
+}
+
+/*This makes things unclickable*/
+.unclickable {
+    pointer-events: none;
+}
+
+/* Whole Navigation Bar thingy */
+#navBar {
+     width: 100%;
+     height: 120px;
+     background-color: #60112D;
+}
+
+/* Div Housing the logoPic */
+#logoDiv {
+     padding-top: 7px;
+     padding-left: 20px;
+     padding-right: 20px;
+     display: inline-block;
+}
+
+#logoPic {
+     height: 100px;
+     width: auto;
+}
+
+/* Div housing the productName */
+#productNameDiv {
+     display: inline-block;
+     height: 120px;
+     position: absolute;
+}
+
+#productName {
+     display: inline-block;
+     color: white;
+     text-align: center;
+
+     /*Centering Vertically*/
+     position: relative;
+     top: 50%;
+     transform: translateY(-50%);
+
+     /* Stylizing the font */
+     font-family: 'Ubuntu', sans-serif;
+     font-size: 45px;
+}
+
+/* Outlined border thing */
+#hamburgerWrapper {
+     width: 60px;
+     height: 60px;
+     border: 6px solid white;
+     border-radius: 20px;
+     display: inline-block;
+
+     /* Aligns the div to the right */
+     position: absolute;
+     right: 20px;
+
+     top: 23px;
+}
+
+/* Meat House */
+#meatWrapper {
+     padding-top: 8px;
+}
+
+/* The meat */
+.insideHamburger {
+     width: 40px;
+     height: 8px;
+     background-color: white;
+     border-radius: 5px;
+
+     /*Aligning within div*/
+     margin: auto;
+     margin-top: 5px;
+}
+
+/*menu button*/
+#menuBtn {
+     width: 40px;
+     height: 45px;
+     background-color: transparent;
+     opacity: 0.5;
+     display: inline-block;
+     z-index: 100;
+
+     /* Aligns the div to the right */
+     position: absolute;
+     right: 35px;
+
+     top: 37px;
+}
+
+/*Stylizes the tab boxes*/
+.tabs {
+    height: 95px;
+    border-left: 6px solid transparent;
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    opacity: 1;
+}
+
+#tabZero {
+    width: 65px;
+}
+
+#tabOne {
+    width: 265px;
+}
+
+#tabTwo {
+    width: 465px;
+}
+
+#tabThree {
+    width: 665px;
+}
+
+/*Stylizes the text in the Tabs*/
+.tabText {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 23px;
+    text-align: center;
+    right: 105px;
+    display: inline-block;
+    position: absolute;
+    color: white;
+}
+
+#home {
+    overflow: hidden;
+    position: relative;
+    right: 115px;
+    display: inline-block;
+}
+
+#about {
+    overflow: hidden;
+    position: relative;
+    right: 65px;
+    display: inline-block;
+}
+
+#contact {
+    overflow: hidden;
+    position: relative;
+    right: 30px;
+    font-size: 18px;
+    display: inline-block;
+    top: -12px;
+}
+
+#account {
+    overflow: hidden;
+    position: relative;
+    font-size: 18px;
+    display: inline-block;
+    top: -12px;
+}
+
+.textHome {
+    transition: 0.3s;
+    position: relative;
+    left: 140px;
+}
+
+.textAbout {
+    transition: 0.3s;
+    position: relative;
+    left: 162px;
+}
+
+.textContact {
+    transition: 0.3s;
+    position: relative;
+    left: 168px;
+}
+
+.textAccount {
+    transition: 0.3s;
+    position: relative;
+    left: 175px;
+}
+
+/*Animates the text sliding*/
+.slide {
+    transition: 0.4s;
+    left: 0px;
+}
+
+ /* Hamburger Arrow Maker */
+
+/* Forwards Animation */
+ @keyframes rotateUp {
+      to {transform : rotate(47deg)};
+ }
+
+ @keyframes rotateDown {
+     to {transform : rotate(-47deg)};
+ }
+
+/* Backwards Animation */
+@keyframes rotateReverseUp {
+     from {transform : rotate(47deg)};
+     to {transform : rotate(0deg)};
+}
+
+@keyframes rotateReverseDown {
+     from {transform : rotate(-47deg)};
+     to {transform : rotate(0deg)};
+}
+
+/* Classes to rotate the meat */
+
+.rotateUp {
+     animation-name: rotateUp;
+     animation-duration: 1s;
+     animation-fill-mode: forwards;
+}
+
+.rotateDown {
+     animation-name: rotateDown;
+     animation-duration: 1s;
+     animation-fill-mode: forwards;
+}
+
+.rotateReverseUp {
+     animation-name: rotateReverseUp;
+     animation-duration: 1s;
+     animation-fill-mode: forwards;
+}
+
+.rotateReverseDown {
+     animation-name: rotateReverseDown;
+     animation-duration: 1s;
+     animation-fill-mode: forwards;
+}
+
+/* Fade meat-imation*/
+
+@keyframes fadeout {
+     from { opacity : 1 ; }
+     to { opacity : 0 ; }
+}
+
+@keyframes fadein {
+     from { opacity : 0 };
+     to {opacity : 1 };
+}
+
+/* Classes to fade the meat */
+
+.fadeout {
+     animation: fadeout 0.5s;
+     animation-fill-mode: forwards;
+}
+
+.fadein {
+     animation: fadein 0.7s;
+     animation-fill-mode: forwards;
+}
+
+/* Tab Animation */
+
+.showTab {
+     border-left: 6px solid white;
+}
+
+/* Wrapper Open Animation */
+
+@keyframes wrapperStretchUp {
+     from { height : 60px ;
+            top : 23px ;
+            width : 60px ; }
+     to { height : 87px ;
+          top : 10px ;
+          width : 60px ; }
+}
+
+.wrapperStretchUp {
+     animation: wrapperStretchUp 0.25s;
+     animation-fill-mode: forwards;
+}
+
+@keyframes wrapperStretchOut {
+     from{ width : 60px ;
+           height : 87px ;
+           top : 10px ;}
+     to{ width : 860px ;
+         height : 87px ;
+         top : 10px ; }
+}
+
+.wrapperStretchOut {
+     animation: wrapperStretchOut 1s;
+     animation-fill-mode: forwards;
+}
+
+@keyframes wrapperStretchUpReverse {
+     from { height : 87px ;
+            top : 10px ;
+            width : 60px ; }
+     to { height : 60px ;
+          top : 23px ;
+          width : 60px ; }
+}
+
+.wrapperStretchUpReverse {
+     animation: wrapperStretchUpReverse 0.15s;
+     animation-fill-mode: forwards;
+}
+
+@keyframes wrapperStretchOutReverse {
+     from { width : 860px ;
+            height : 87px ;
+            top : 10px ; }
+     to { width : 60px ;
+          height : 87px ;
+          top : 10px ; }
+}
+
+.wrapperStretchOutReverse {
+     animation: wrapperStretchOutReverse 1s;
+     animation-fill-mode: forwards;
+}
+
+/* Burger keep in place */
+
+@keyframes burgerHolderUp {
+     from { padding-top : 8px ;
+            padding-left : 0px ; }
+     to { padding-top : 21px ;
+          padding-left : 0px ; }
+}
+
+.burgerHolderUp {
+     animation: burgerHolderUp 0.25s;
+     animation-fill-mode: forwards;
+}
+
+@keyframes burgerHolderLeft {
+     from { padding-left : 0px ;
+            padding-top: 21px ; }
+     to { padding-left : 800px ;
+          padding-top : 21px ; }
+}
+
+.burgerHolderLeft {
+     animation: burgerHolderLeft 1s;
+     animation-fill-mode: forwards;
+}
+
+@keyframes burgerHolderUpReverse {
+     from{ padding-top : 21px ;
+           padding-left : 0px ; }
+     to { padding-top : 8px ;
+          padding-left : 0px ; }
+}
+
+.burgerHolderUpReverse {
+     animation: burgerHolderUpReverse 0.15s;
+     animation-fill-mode: forwards;
+}
+
+@keyframes burgerHolderLeftReverse {
+     from{ padding-top : 21px ;
+           padding-left : 800px ; }
+     to { padding-top : 21px ;
+          padding-left : 0px ; }
+}
+
+.burgerHolderLeftReverse {
+     animation: burgerHolderLeftReverse 1s;
+     animation-fill-mode: forwards;
+}
+
+/*Makes the symbols for mobile invisible*/
+.tabSymbols {
+    visibility: hidden;
+    display: inline-block;
+    position: absolute;
+    right: 30px;
+}
+
+
+/* Begin the super-ultra-fun Media Query Stuff!! */
+
+@media screen and (max-width: 1250px) {
+     /*Stretches solid lines box*/
+     @keyframes wrapperStretchOut {
+          from{ width : 60px ;
+                height : 87px ;
+                top : 10px ;}
+          to{ width : 560px ;
+              height : 87px ;
+              top : 10px ; }
+     }
+
+     .wrapperStretchOut {
+          animation: wrapperStretchOut 1s;
+          animation-fill-mode: forwards;
+     }
+
+     @keyframes burgerHolderLeft {
+          from { padding-left : 0px ;
+                 padding-top: 21px ; }
+          to { padding-left : 500px ;
+               padding-top : 21px ; }
+     }
+
+     .burgerHolderLeft {
+          animation: burgerHolderLeft 1s;
+          animation-fill-mode: forwards;
+     }
+
+     @keyframes burgerHolderLeftReverse {
+          from{ padding-top : 21px ;
+                padding-left : 500px ; }
+          to { padding-top : 21px ;
+               padding-left : 0px ; }
+     }
+
+     .burgerHolderLeftReverse {
+          animation: burgerHolderLeftReverse 1s;
+          animation-fill-mode: forwards;
+     }
+
+     @keyframes wrapperStretchOutReverse {
+          from { width : 560px ;
+                 height : 87px ;
+                 top : 10px ; }
+          to { width : 60px ;
+               height : 87px ;
+               top : 10px ; }
+     }
+
+     .wrapperStretchOutReverse {
+          animation: wrapperStretchOutReverse 1s;
+          animation-fill-mode: forwards;
+     }
+
+  /* Positioning all of the tabs */
+     #tabZero {
+          width : 65px
+     }
+
+     #tabOne {
+        width : 190px;
+     }
+
+     #tabTwo {
+        width : 315px;
+     }
+
+     #tabThree {
+        width : 440px;
+     }
+
+/*    Repositions the text*/
+    .tabText {
+        height: 100px;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 16px;
+        text-align: center;
+        right: 105px;
+        top: 20px;
+        display: inline-block;
+        position: absolute;
+        color: white;
+    }
+
+    #home {
+        overflow: hidden;
+        position: relative;
+        right: 75px;
+        display: inline-block;
+    }
+
+    #about {
+        overflow: hidden;
+        position: relative;
+        right: 53px;
+        display: inline-block;
+    }
+
+    #contact {
+        overflow: hidden;
+        position: relative;
+        right: 30px;
+        font-size: 10px;
+        display: inline-block;
+        top: -12px;
+    }
+
+    #account {
+        overflow: hidden;
+        position: relative;
+        font-size: 10px;
+        display: inline-block;
+        top: -12px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+     #menuBtn {
+          width: 70px;
+     }
+
+     @keyframes wrapperStretchUp {
+          from { width : 60px ;
+                 top : 23px ;
+                 height : 60px ; }
+          to { width : 87px ;
+               top : 23px ;
+               height : 60px ; }
+     }
+
+     .wrapperStretchUp {
+          animation: wrapperStretchUp 0.25s;
+          animation-fill-mode: forwards;
+     }
+
+     @keyframes wrapperStretchOut {
+          from{ height : 60px ;
+                width : 87px ;
+                top : 23px ;}
+          to{ height : 560px ;
+              width : 87px ;
+              top : 23px ; }
+     }
+
+     .wrapperStretchOut {
+          animation: wrapperStretchOut 1s;
+          animation-fill-mode: forwards;
+     }
+
+     @keyframes burgerHolderUp {
+          from { padding-top : 8px ;
+                 padding-left : 0px ; }
+          to { padding-top : 8px ;
+               padding-left : 0px ; }
+     }
+
+     .burgerHolderUp {
+          animation: burgerHolderUp 0.25s;
+          animation-fill-mode: forwards;
+     }
+
+     @keyframes burgerHolderLeft {
+          from { padding-left : 0px ;
+                 padding-top: 8px ; }
+          to { padding-left : 0px ;
+               padding-top : 8px ; }
+     }
+
+     .burgerHolderLeft {
+          animation: burgerHolderLeft 1s;
+          animation-fill-mode: forwards;
+     }
+
+     @keyframes wrapperStretchUpReverse {
+          from { width : 87px ;
+                 top : 23px ;
+                 height : 60px ; }
+          to { width : 60px ;
+               top : 23px ;
+               height : 60px ; }
+     }
+
+     .wrapperStretchUpReverse {
+          animation: wrapperStretchUpReverse 0.15s;
+          animation-fill-mode: forwards;
+     }
+
+     @keyframes wrapperStretchOutReverse {
+          from { height : 560px ;
+                 width : 87px ;
+                 top : 23px ; }
+          to { height : 60px ;
+               width : 87px ;
+               top : 23px ; }
+     }
+
+     .wrapperStretchOutReverse {
+          animation: wrapperStretchOutReverse 1s;
+          animation-fill-mode: forwards;
+     }
+
+     @keyframes burgerHolderUpReverse {
+          from{ padding-top : 8px ;
+                padding-left : 0px ; }
+          to { padding-top : 8px ;
+               padding-left : 0px ; }
+     }
+
+     .burgerHolderUpReverse {
+          animation: burgerHolderUpReverse 0.15s;
+          animation-fill-mode: forwards;
+     }
+
+     @keyframes burgerHolderLeftReverse {
+          from{ padding-top : 8px ;
+                padding-left : 0px ; }
+          to { padding-top : 8px ;
+               padding-left : 0px ; }
+     }
+
+     .burgerHolderLeftReverse {
+          animation: burgerHolderLeftReverse 1s;
+          animation-fill-mode: forwards;
+     }
+
+     #tabZero {
+          width: 92px;
+         height: 75px;
+     }
+
+     #tabOne {
+          width: 92px;
+         height: 200px;
+     }
+
+     #tabTwo {
+          width: 92px;
+         height: 325px;
+     }
+
+     #tabThree {
+          width: 92px;
+         height: 450px;
+     }
+
+     .showTab {
+          border-left: 6px solid transparent;
+          border-bottom: 6px solid white;
+     }
+
+     /* Forwards Animation */
+      @keyframes rotateUp {
+           to {transform : rotate(-43deg) ;
+               margin-top : 19px ; }
+      }
+
+      @keyframes rotateDown {
+          to {transform : rotate(43deg) ;
+              margin-top : -22px ; }
+      }
+
+     /* Backwards Animation */
+     @keyframes rotateReverseUp {
+          from {transform : rotate(-43deg) ;
+                margin-top : 19px ; }
+          to {transform : rotate(0deg) ;
+              margin-top : 5px ; }
+     }
+
+     @keyframes rotateReverseDown {
+          from {transform : rotate(43deg) ;
+                margin-top : -22px ; }
+          to {transform : rotate(0deg) ;
+              margin-top : 5px ; }
+     }
+
+     /* Classes to rotate the meat */
+
+     .rotateUp {
+          animation-name: rotateUp;
+          animation-duration: 1s;
+          animation-fill-mode: forwards;
+     }
+
+     .rotateDown {
+          animation-name: rotateDown;
+          animation-duration: 1s;
+          animation-fill-mode: forwards;
+     }
+
+     .rotateReverseUp {
+          animation-name: rotateReverseUp;
+          animation-duration: 1s;
+          animation-fill-mode: forwards;
+     }
+
+     .rotateReverseDown {
+          animation-name: rotateReverseDown;
+          animation-duration: 1s;
+          animation-fill-mode: forwards;
+     }
+
+/*    Makes the text invisible*/
+    .tabText {
+        visibility: hidden;
+    }
+
+    #home {
+        visibility: hidden;
+    }
+
+    #about {
+        visibility: hidden;
+    }
+
+    #contact {
+        visibility: hidden;
+    }
+
+    #account {
+        visibility: hidden;
+    }
+
+/*    Stylizes all the symbols for mobile*/
+    .tabSymbols {
+        background-color: blueviolet;
+        visibility: visible;
+        top: 120px;
+        right: 99px;
+        display: inline-block;
+        position: absolute;
+    }
+
+    #homeSymbol {
+        overflow: hidden;
+        position: absolute;
+        display: inline-block;
+    }
+
+    #dropSymbol {
+        overflow: hidden;
+        position: absolute;
+        display: inline-block;
+        top: 120px;
+        left: 10px;
+    }
+
+    #contactSymbol {
+        overflow: hidden;
+        position: absolute;
+        display: inline-block;
+        top: 265px;
+        left: 0px;
+    }
+
+    #accountSymbol {
+        overflow: hidden;
+        position: absolute;
+        display: inline-block;
+        top: 370px;
+        left: 5px;
+    }
+
+    .houseImg {
+        transition: 0.2s;
+        position: relative;
+        width: 60px;
+        height: auto;
+        top: -60px;
+    }
+
+    .dropImg {
+        transition: 0.2s;
+        position: relative;
+        width: 35px;
+        height: auto;
+        top: -65px;
+    }
+
+    .contactImg {
+        transition: 0.2s;
+        position: relative;
+        width: 60px;
+        height: auto;
+        top: -45px;
+    }
+
+    .accountImg {
+        transition: 0.2s;
+        position: relative;
+        width: 50px;
+        height: auto;
+        top: -75px;
+    }
+
+/*    Makes the symbol slide animation*/
+    .slideSymbol {
+        transition: 0.4s;
+        top: 0px;
+    }
+}
+
+/* Content of the page */
+
+#raindropWrapper {
+     overflow: hidden;
+     position: absolute;
+     width: 200px;
+     height: 374px;
+     top: 500px;
+     isolation: isolate;
+}
+
+#percentRainFill {
+     position: absolute;
+     width: inherit;
+     top: 45%;
+     text-align: center;
+     vertical-align: middle;
+     color:black;
+     font-family: "Ubuntu","sans-serif";
+     font-size: 50px;
+}
+
+#raindrop {
+     width: inherit;
+     height: auto;
+     z-index: 100;
+}
+
+#raindropFill {
+     width: inherit;
+     position: absolute;
+     bottom: 5px;
+     height: 100px;
+     background-color: cyan;
+     z-index: -100;
+}
